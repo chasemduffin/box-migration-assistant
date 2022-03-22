@@ -2,9 +2,9 @@
 
 ### Example Usage
 ### ./groups_sharing_report.sh "My Group" "123456789"
-                                                                                                # partial matching group name(s)
-group_search_string=($1)
-query_user_id=($2)                                                                              # user ID of the Box user to search with
+
+group_search_string=($1)                                                                        # partial matching group name(s)
+query_user_id=($2)                                                                              # user ID of the Box user to search with                                                                              
 
 group_ids=$(box groups --filter $group_search_string --json | jq '.[].id' --raw-output)         # get the IDs of the matching groups
 
